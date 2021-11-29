@@ -12,11 +12,13 @@ public class BulletBehaviour : MonoBehaviour
     {
         Destroy(this.gameObject,5f);
         rb = GetComponent<Rigidbody2D>();
+        rb.AddForce(transform.right*velocity,ForceMode2D.Impulse);
+
     }
-    void FixedUpdate()
-    {
-        rb.AddForce(new Vector2(0f,velocity),ForceMode2D.Force);
-    }
+    // void FixedUpdate()
+    // {
+    //     rb.AddForce(transform.right*velocity,ForceMode2D.Impulse);
+    // }
 
     void OnTriggerEnter2D(Collider2D col)
     {
