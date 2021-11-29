@@ -10,11 +10,12 @@ public class BulletBehaviour : MonoBehaviour
     
     void Start()
     {
+        Destroy(this.gameObject,5f);
         rb = GetComponent<Rigidbody2D>();
     }
     void FixedUpdate()
     {
-        rb.AddForce(new Vector2(velocity,0f),ForceMode2D.Force);
+        rb.AddForce(new Vector2(0f,velocity),ForceMode2D.Force);
     }
 
     void OnTriggerEnter2D(Collider2D col)

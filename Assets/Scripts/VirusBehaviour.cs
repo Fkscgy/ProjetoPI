@@ -11,9 +11,6 @@ public class VirusBehaviour : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-    void FixedUpdate()
-    {
         rb.AddForce(new Vector2(0f,velocity),ForceMode2D.Force);
     }
 
