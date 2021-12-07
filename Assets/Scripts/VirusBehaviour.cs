@@ -13,6 +13,10 @@ public class VirusBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(0f,velocity),ForceMode2D.Force);
     }
+    void Update()
+    {
+        transform.Translate(-transform.up*velocity*Time.deltaTime);
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {

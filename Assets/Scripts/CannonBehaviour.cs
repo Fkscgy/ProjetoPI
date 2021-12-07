@@ -28,7 +28,7 @@ public class CannonBehaviour : MonoBehaviour
         float atual = transform.rotation.eulerAngles.z;
         if(atual > 30f && atual < 150f)
         {
-            transform.rotation = Quaternion.Euler(0f,0f,Mathf.Clamp(atual,35f,145f));
+            transform.rotation = Quaternion.Euler(0f,0f,Mathf.Clamp(atual,35f,145f));   
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles - new Vector3(0f,0f,h));
         }
     }
