@@ -171,7 +171,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1: {fileID: 1328483005}
   p2: {fileID: 363872996}
-  virus: {fileID: 3059659476846395757, guid: 40d10eccde950d34fa0504bf9426b5d5, type: 3}
+  virus:
+  - {fileID: 3059659476846395757, guid: 4edf20a0bd674564da12791ec9c40bbc, type: 3}
+  - {fileID: 3059659476846395757, guid: 40d10eccde950d34fa0504bf9426b5d5, type: 3}
   maxTime: 2
   minTime: 0.5
   decrease: 0.05
