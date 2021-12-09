@@ -15,23 +15,4 @@ public class BulletBehaviour : MonoBehaviour
         rb.AddForce(transform.right*velocity,ForceMode2D.Impulse);
 
     }
-    // void FixedUpdate()
-    // {
-    //     rb.AddForce(transform.right*velocity,ForceMode2D.Impulse);
-    // }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        switch(col.tag)
-        {
-            case "Ground":
-                Destroy(this.gameObject);  
-            break;
-            case "Virus":
-                Destroy(col.gameObject);
-                Destroy(this.gameObject);
-                // GameManager.Point();
-            break;
-        }
-    }
 }
