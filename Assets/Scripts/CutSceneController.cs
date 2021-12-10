@@ -9,18 +9,15 @@ public class CutSceneController : MonoBehaviour
     [SerializeField]
     Image imagem;
     [SerializeField]
-    Sprite[] imagens;
+    Sprite imagemm;
     int index = 0;
 
     public void Prosseguir()
     {
-        if(index < imagens.Length-1)
-        {
-            index++;   
-        } else
-        {
-            SceneManager.LoadScene("Game");
-        }
-        imagem.sprite = imagens[index];
+        if(index>0)
+        SceneManager.LoadScene("Game");
+        imagem.sprite = imagemm;
+        index++;
+
     }
 }

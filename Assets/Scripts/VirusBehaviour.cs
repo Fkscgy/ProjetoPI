@@ -13,7 +13,6 @@ public class VirusBehaviour : MonoBehaviour
     
     void Start()
     {
-        gc = GameObject.FindObjectOfType<GameController>();
         sc = GameObject.FindObjectOfType<ScoreController>();
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(0f,velocity),ForceMode2D.Force);
@@ -30,7 +29,7 @@ public class VirusBehaviour : MonoBehaviour
         {
             case "Ground":
                 Destroy(this.gameObject);
-                gc.GameOver();
+                SceneManager.LoadScene("GameOver");
             break;
             case "Y":
                 sc.Increase(1);

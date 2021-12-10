@@ -7,7 +7,7 @@ public class ScoreController : MonoBehaviour
 {
     [SerializeField]
     Text texto;
-    static int points = 0;
+    static int points;
 
     public static int Points { get => points;private set => points = value; }
 
