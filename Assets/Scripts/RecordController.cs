@@ -27,10 +27,8 @@ public class RecordController : MonoBehaviour
         {
             saveData.Ranks.AddRange(ranks);
         }
-        Debug.Log(saveData.Ranks[0].Name[0].name);
         saveData.Ranks = saveData.Ranks.DistinctBy(r=> new {r.NameString,r.Points}).ToList();
         string data = JsonUtility.ToJson(saveData);
-        Debug.Log(data);
         PlayerPrefs.SetString("GameData",data);
     }
     public static void LoadData()

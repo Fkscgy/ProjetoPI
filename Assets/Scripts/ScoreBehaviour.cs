@@ -14,7 +14,7 @@ public class ScoreBehaviour : MonoBehaviour
                 return;
             if(ranks.Count>10)
                 ranks.RemoveRange(10,ranks.Count-10);
-            ranks.Sort((x,y)=>x.Points.CompareTo(y.Points));
+            ranks.Sort((x,y)=>y.Points.CompareTo(x.Points));
             for (int i = 0; i < ranks.Count; i++)
             {
                 Transform c = this.transform.GetChild(i);
@@ -25,11 +25,10 @@ public class ScoreBehaviour : MonoBehaviour
                     {
                         Image a = c.GetChild(o).GetComponent<Image>();
                         a.sprite = ranks[i].Name[o];
-                        Debug.Log(o);
                     } else if(o>=3)
                     {
                         TextMeshProUGUI b = c.GetChild(o).GetComponent<TextMeshProUGUI>();
-                        b.text = ranks[i].Points.ToString();
+                        b.text = $": {ranks[i].Points}";
                     }
                 }
             }

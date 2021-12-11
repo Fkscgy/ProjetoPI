@@ -17,7 +17,7 @@ public class CanvasController : MonoBehaviour
     {
         for(int i = 0;i<nome.Length;i++)
         {
-            nome[i] = this.transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite;
+            nome[i] = this.transform.GetChild(0).GetChild(i+1).GetChild(0).GetComponent<Image>().sprite;
         }
     }
     public void Confirmar()

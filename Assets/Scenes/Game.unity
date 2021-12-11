@@ -174,7 +174,7 @@ MonoBehaviour:
   virus:
   - {fileID: 3059659476846395757, guid: 4edf20a0bd674564da12791ec9c40bbc, type: 3}
   - {fileID: 3059659476846395757, guid: 40d10eccde950d34fa0504bf9426b5d5, type: 3}
-  maxTime: 5
+  maxTime: 2
   minTime: 0.5
   decrease: 0.05
 --- !u!1 &363872996
@@ -1148,8 +1148,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f30ec2252c5ac5a46a4667afdec149bd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
