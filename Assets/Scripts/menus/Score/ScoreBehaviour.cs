@@ -24,7 +24,7 @@ public class ScoreBehaviour : MonoBehaviour
                     if(o<3)
                     {
                         Image a = c.GetChild(o).GetComponent<Image>();
-                        a.sprite = ranks[i].Name[o];
+                        a.sprite = Resources.Load<Sprite>("Letras/"+ranks[i].Name[o].ToString());
                     } else if(o>=3)
                     {
                         TextMeshProUGUI b = c.GetChild(o).GetComponent<TextMeshProUGUI>();

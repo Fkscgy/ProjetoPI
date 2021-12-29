@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.IO;
 using MoreLinq;
 using System.Linq;
 public class RecordController : MonoBehaviour
 {
-    // public static List<Rank> ranks;
     private static SaveData saveData;
     private static List<Rank> ranks;
 
@@ -27,21 +27,17 @@ public class RecordController : MonoBehaviour
         {
             saveData.Ranks.AddRange(ranks);
         }
-        saveData.Ranks = saveData.Ranks.DistinctBy(r=> new {r.NameString,r.Points}).ToList();
-        string data = JsonUtility.ToJson(saveData);
+        // saveData.Ranks = saveData.Ranks.DistinctBy(r=> new {r.NameString,r.Points}).ToList();
+        var data = JsonUtility.ToJson(saveData);
         PlayerPrefs.SetString("GameData",data);
     }
     public static void LoadData()
     {
-        try
-        {
-            string data = PlayerPrefs.GetString("GameData");
-            saveData = JsonUtility.FromJson<SaveData>(data);
-            saveData.Ranks = saveData.Ranks.DistinctBy(r=> new {r.NameString,r.Points}).ToList();
-        } catch(NullReferenceException)
-        {
-            saveData = null;
-        }
+        var data = PlayerPrefs.GetString("GameData");
+        saveData = JsonUtility.FromJson<SaveData>(data);
+        if(saveData == null)
+            return;
+        saveData.Ranks = saveData.Ranks.DistinctBy(r=> new {r.NameString,r.Points}).ToList();
     }
     public static List<Rank> Get()
     {
@@ -50,7 +46,6 @@ public class RecordController : MonoBehaviour
     public static void Set(Rank r)
     {
         if(r != null)
-        ranks.Add(r);
+            ranks.Add(r);
     }
-    
 }

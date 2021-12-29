@@ -2863,7 +2863,7 @@ GameObject:
   - component: {fileID: 853837404}
   - component: {fileID: 853837403}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Record Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
